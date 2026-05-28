@@ -1,0 +1,11 @@
+# compiled binary
+/payroll
+payroll
+*.o
+*.so
+
+# editor / OS cruft
+.DS_Store
+.idea/
+.vscode/
+*.swp

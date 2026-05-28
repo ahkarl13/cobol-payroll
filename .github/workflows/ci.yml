@@ -1,0 +1,17 @@
+name: ci
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: install GnuCOBOL
+        run: sudo apt-get update && sudo apt-get install -y gnucobol
+      - name: compile
+        run: cobc -x payroll.cob -o payroll
+      - name: run
+        run: ./payroll
